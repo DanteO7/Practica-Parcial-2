@@ -1,6 +1,7 @@
 import { createHeader } from "./create-header";
 import { createFooter } from "./create-footer";
 import { createMainFavorite } from "./create-main-favorite";
+import { updateMain } from "./update-main";
 
 export function createFavorite() {
   const app = document.querySelector("#app");
@@ -10,6 +11,7 @@ export function createFavorite() {
 
   const main = document.createElement("main");
   createMainFavorite(main);
+  updateMain(header, main);
 
   const footer = document.createElement("footer");
   createFooter(footer);

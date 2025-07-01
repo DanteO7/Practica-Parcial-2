@@ -1,0 +1,55 @@
+.details-button {
+  color: red;
+  border: 1.3px solid red;
+  border-radius: 1.6rem;
+  padding: 0.5rem 1rem;
+}
+
+.favorite-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1.5px solid red;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite-button img {
+  width: 60%;
+}
+
+.favorite-button.active {
+  background-color: red;
+}
+
+.close-button {
+  border: 1px solid red;
+  border-radius: 6px;
+  background-color: #1e1e1e;
+  padding: 5px;
+}
+
+.ordering-field {
+  width: auto;
+  background-color: #1e1e1e;
+  border: 1px solid red;
+  border-radius: 16px;
+  padding: 5px 10px;
+  appearance: auto;
+  max-width: max-content;
+}
+
+.ordering-button {
+  width: auto;
+  background-color: #1e1e1e;
+  border: 1px solid red;
+  border-radius: 16px;
+  padding: 5px 10px;
+  appearance: auto;
+  max-width: max-content;
+}
+
+.modal-button {
+}

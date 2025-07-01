@@ -1,0 +1,40 @@
+.game-card {
+  background-color: #1e1e1e;
+  margin: 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  width: 325px;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card-content {
+  padding: 0.3rem 1.5rem 1.5rem 1.5rem;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+  color: red;
+}
+
+.platforms {
+}
+
+.platforms img {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: 0.3rem;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}

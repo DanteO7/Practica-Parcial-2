@@ -14,8 +14,6 @@ export function createMainFavorite(main) {
     return data;
   }
 
-  console.log(getLocalStorage());
-
   createCard(getLocalStorage(), cardContainer);
 
   main.appendChild(cardContainer);

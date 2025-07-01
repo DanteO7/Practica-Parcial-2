@@ -9,22 +9,21 @@ export function createMain(
   url = "https://api.rawg.io/api/games?key=d9dc2c3b718b44eca778d7aab8b1fbd9"
 ) {
   const orderingContainer = document.createElement("section");
+  orderingContainer.classList.add("ordering-container");
 
   orderingContainer.innerHTML = `
     <h2>Ordenar por</h2>
-    <select name="ordering" class="ordering">
-      <option value="">Seleccione un orden</option>
-      <option value="metacritic">Metacritic</option>
-      <option value="rating">Rating</option>
-      <option value="released">Released</option>
-      <option value="name">Name</option>
-      <option value="updated">Updated</option>
-      <option value="added">Added</option>
+    <select name="ordering" class="ordering-field">
+      <option class="ordering-field" value="">Seleccione un orden</option>
+      <option class="ordering-field" value="metacritic">Metacritic</option>
+      <option class="ordering-field" value="name">Name</option>
+      <option class="ordering-field" value="updated">Updated</option>
+      <option class="ordering-field" value="added">Added</option>
       </select>
       <button class="ordering-button">Aplicar</button>`;
 
   const orderingButton = orderingContainer.querySelector(".ordering-button");
-  const orderingSelected = orderingContainer.querySelector(".ordering");
+  const orderingSelected = orderingContainer.querySelector(".ordering-field");
   orderingButton.addEventListener("click", () => {
     orderMain(main, `${currentUrl}&ordering=-${orderingSelected.value}`);
   });

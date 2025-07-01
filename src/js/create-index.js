@@ -11,6 +11,7 @@ export function createIndex() {
 
   const main = document.createElement("main");
   createMain(main);
+  updateMain(header, main);
 
   const footer = document.createElement("footer");
   createFooter(footer);
@@ -18,5 +19,4 @@ export function createIndex() {
   app.appendChild(header);
   app.appendChild(main);
   app.appendChild(footer);
-  updateMain(header, main);
 }

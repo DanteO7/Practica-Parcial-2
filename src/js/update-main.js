@@ -13,6 +13,7 @@ export function updateMain(header, main) {
         const urlToSearchByName = `${url}&search_precise=true&search=${query}`;
         main.innerHTML = "";
         createMain(main, urlToSearchByName);
+        searchInputEl.value = "";
       } catch (error) {
         console.error(error);
       }
