@@ -1,9 +1,34 @@
 import { createCard } from "./create-card";
+import { orderMain } from "./order-main";
+
+const currentUrl =
+  "https://api.rawg.io/api/games?key=d9dc2c3b718b44eca778d7aab8b1fbd9";
 
 export function createMain(
   main,
   url = "https://api.rawg.io/api/games?key=d9dc2c3b718b44eca778d7aab8b1fbd9"
 ) {
+  const orderingContainer = document.createElement("section");
+
+  orderingContainer.innerHTML = `
+    <h2>Ordenar por</h2>
+    <select name="ordering" class="ordering">
+      <option value="">Seleccione un orden</option>
+      <option value="metacritic">Metacritic</option>
+      <option value="rating">Rating</option>
+      <option value="released">Released</option>
+      <option value="name">Name</option>
+      <option value="updated">Updated</option>
+      <option value="added">Added</option>
+      </select>
+      <button class="ordering-button">Aplicar</button>`;
+
+  const orderingButton = orderingContainer.querySelector(".ordering-button");
+  const orderingSelected = orderingContainer.querySelector(".ordering");
+  orderingButton.addEventListener("click", () => {
+    orderMain(main, `${currentUrl}&ordering=-${orderingSelected.value}`);
+  });
+
   const cardsContainer = document.createElement("section");
   cardsContainer.classList.add("cards-container");
 
@@ -13,7 +38,6 @@ export function createMain(
       const data = await res.json();
 
       createCard(data.results, cardsContainer);
-      console.log(data.results[0].short_screenshots[0].image);
       updatePagination(data.previous, data.next);
     } catch (err) {
       console.error(err);
@@ -43,6 +67,7 @@ export function createMain(
   });
 
   fetchGames(url);
+  main.appendChild(orderingContainer);
   main.appendChild(cardsContainer);
   main.appendChild(buttonContainer);
 }

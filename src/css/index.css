@@ -182,19 +182,36 @@ footer p {
   width: 100vw;
   height: 100vh;
   color: red;
+  overflow: hidden;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
+
   align-items: center;
+}
+
+.modal-header {
+  width: 80vw;
+  display: flex;
+  justify-content: end;
+}
+
+.close-button {
+  border: 1px solid red;
+  border-radius: 6px;
+  background-color: #1e1e1e;
+  padding: 5px;
 }
 
 .modal {
   background-color: #1e1e1e;
   width: 80vw;
-  height: 80vh;
+  max-height: 70vh;
   padding: 5vw;
   border: 1px solid red;
   border-radius: 10px;
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
@@ -207,17 +224,11 @@ footer p {
   justify-content: center;
   text-align: center;
   gap: 10px;
-}
-
-.close-button-container {
-  display: flex;
-  justify-content: end;
-  width: 100%;
+  padding: 2vw;
 }
 
 .modal-image {
   width: 100%;
-  height: 140px;
   object-fit: cover;
   aspect-ratio: 16 / 9;
 }
@@ -231,6 +242,55 @@ footer p {
   display: none;
 }
 
+.carrousel {
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 .carrousel-image {
-  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.carrousel-image.active {
+  opacity: 1;
+  transform: translateX(0%);
+  z-index: 3;
+}
+
+.carrousel-image.next {
+  opacity: 0;
+  transform: translateX(100%);
+  z-index: 2;
+}
+
+.carrousel-image.last {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 2;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: end;
+}
+
+@media (width > 768px) {
+  .modal {
+    width: 50vw;
+    padding: 1vw;
+  }
+  .modal-header {
+    width: 50vw;
+  }
+  .modal-content {
+    padding: 0 5vw;
+  }
 }
