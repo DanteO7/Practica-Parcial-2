@@ -41,55 +41,55 @@
 }
 
 .button-image.active div {
-  background-image: url("assets/corazon-relleno.png");
+  background-image: url("/assets/corazon-relleno.png");
 }
 
 .button-image.active:hover div {
-  background-image: url("assets/favoritos.png");
+  background-image: url("/assets/favoritos.png");
 }
 
 .favorite-button div {
-  background-image: url("assets/favoritos.png");
+  background-image: url("/assets/favoritos.png");
   width: 60%;
   height: 60%;
   background-size: cover;
 }
 
 .favorite-button:hover div {
-  background-image: url("assets/corazon-negro.png");
+  background-image: url("/assets/corazon-negro.png");
 }
 
 .prev-button div {
-  background-image: url("assets/prev.png");
+  background-image: url("/assets/prev.png");
   width: 60%;
   height: 60%;
   background-size: cover;
 }
 
 .prev-button:hover div {
-  background-image: url("assets/prev-negro.png");
+  background-image: url("/assets/prev-negro.png");
 }
 
 .next-button div {
-  background-image: url("assets/next.png");
+  background-image: url("/assets/next.png");
   width: 60%;
   height: 60%;
   background-size: cover;
 }
 
 .next-button:hover div {
-  background-image: url("assets/next-negro.png");
+  background-image: url("/assets/next-negro.png");
 }
 
 .close-button div {
-  background-image: url("assets/close.png");
+  background-image: url("/assets/close.png");
   width: 50%;
   height: 50%;
   background-size: cover;
 }
 
 .close-button:hover div {
-  background-image: url("assets/close-negro.png");
+  background-image: url("/assets/close-negro.png");
 }
 
 .modal-button {
