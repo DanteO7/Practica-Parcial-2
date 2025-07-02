@@ -1,13 +1,14 @@
 import { getPlatformIcon } from "./get-plataform-icon";
 
 export function createModal(card, game) {
+  document.body.style.overflow = "hidden";
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal-container");
   modalContainer.innerHTML = `
-    <div class="modal-header">
-        <button class="close-button">Cerrar</button>
-    </div>
-    <div class="modal">
+  <div class="modal">
+        <div class="modal-header">
+          <button class="button-image close-button"><div></div></button>
+        </div>
         <img
         class="modal-image"
         src="${game.background_image}"
@@ -46,13 +47,13 @@ export function createModal(card, game) {
               })
               .join("")}
         </div>
-        <div class="button-container">
-            <button class="modal-button prev-button"><</button>
-            <button class="modal-button next-button">></button>
+        <div class="carrousel-buttons">
+            <button class="button-image prev-button"><div></div></button>
+            <button class="button-image next-button"><div></div></button>
         </div>
-        <div class="modal-buttons">
-            <button class="favorite-button">
-            <img src="/assets/favoritos.png" alt="Agregar a favoritos" />
+        <div class="favorite-container">
+            <button class="button-image favorite-button">
+              <div></div>
             </button>
         </div>
         </div>
@@ -75,6 +76,7 @@ export function createModal(card, game) {
   const closeModalButton = modalContainer.querySelector(".close-button");
   closeModalButton.addEventListener("click", () => {
     card.removeChild(card.lastElementChild);
+    document.body.style.overflow = "";
     const cardFavoriteButton = card.querySelector(".favorite-button");
     cardFavoriteButton.className = favoriteButton.className;
   });

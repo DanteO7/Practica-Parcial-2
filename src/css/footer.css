@@ -1,6 +1,7 @@
 footer {
-  background-color: black;
+  background-color: var(--secondary-color);
   width: 100%;
+  border-top: 1px solid var(--border-color);
 
   display: flex;
   justify-content: center;
@@ -9,6 +10,5 @@ footer {
 }
 
 footer p {
-  color: red;
   text-align: center;
 }

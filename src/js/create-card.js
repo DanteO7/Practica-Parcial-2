@@ -18,9 +18,9 @@ export function createCard(games, cardContainer) {
         </div>
 
         <div class="card-buttons">
-          <button class="details-button">Más Detalles</button>
-          <button class="favorite-button">
-            <img src="/assets/favoritos.png" alt="Agregar a favoritos">
+          <button class="primary-button details-button">Más Detalles</button>
+          <button class="button-image favorite-button">
+            <div></div>
           </button>
         </div>
       </div>

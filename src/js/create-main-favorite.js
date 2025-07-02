@@ -1,6 +1,11 @@
 import { createCard } from "./create-card";
 
 export function createMainFavorite(main) {
+  const titleContainer = document.createElement("section");
+  titleContainer.classList.add("title-container");
+  titleContainer.innerHTML = `
+    <h2>Tus juegos favoritos</h2>
+  `;
   const cardContainer = document.createElement("section");
   cardContainer.classList.add("cards-container");
 
@@ -16,5 +21,6 @@ export function createMainFavorite(main) {
 
   createCard(getLocalStorage(), cardContainer);
 
+  main.appendChild(titleContainer);
   main.appendChild(cardContainer);
 }

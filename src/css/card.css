@@ -1,9 +1,8 @@
 .game-card {
-  background-color: #1e1e1e;
-  margin: 1.5rem;
-  border-radius: 1rem;
-  color: white;
+  background-color: var(--secondary-color);
   width: 325px;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
 }
 
 .card-image {
@@ -20,7 +19,7 @@
 .card-content h3 {
   font-size: 1.3rem;
   margin-bottom: 0.4rem;
-  color: red;
+  color: var(--primary-color);
 }
 
 .platforms {

@@ -13,14 +13,14 @@ export function createMain(
 
   orderingContainer.innerHTML = `
     <h2>Ordenar por</h2>
-    <select name="ordering" class="ordering-field">
-      <option class="ordering-field" value="">Seleccione un orden</option>
-      <option class="ordering-field" value="metacritic">Metacritic</option>
-      <option class="ordering-field" value="name">Name</option>
-      <option class="ordering-field" value="updated">Updated</option>
-      <option class="ordering-field" value="added">Added</option>
+    <select name="ordering" class="primary-button ordering-field">
+      <option class="primary-button ordering-field" value="">Seleccione un orden</option>
+      <option class="primary-button ordering-field" value="metacritic">Metacritic</option>
+      <option class="primary-button ordering-field" value="name">Nombre</option>
+      <option class="primary-button ordering-field" value="updated">Última actualización</option>
+      <option class="primary-button ordering-field" value="added">Agregado</option>
       </select>
-      <button class="ordering-button">Aplicar</button>`;
+      <button class="primary-button ordering-button">Aplicar</button>`;
 
   const orderingButton = orderingContainer.querySelector(".ordering-button");
   const orderingSelected = orderingContainer.querySelector(".ordering-field");
@@ -32,12 +32,24 @@ export function createMain(
   cardsContainer.classList.add("cards-container");
 
   async function fetchGames(url) {
+    cardsContainer.innerHTML = `<div class="loader"></div>`;
     try {
       const res = await fetch(url);
       const data = await res.json();
 
+      if (data.results.length === 0) {
+        cardsContainer.removeChild(cardsContainer.firstElementChild);
+        const p = document.createElement("p");
+        p.innerText = "No se ha econtrado juegos con ese nombre";
+        cardsContainer.appendChild(p);
+        if (data.results.length === 0) {
+          throw new Error("No se ha econtrado juegos con ese nombre");
+        }
+      }
+
       createCard(data.results, cardsContainer);
       updatePagination(data.previous, data.next);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
       console.error(err);
     }
@@ -48,10 +60,10 @@ export function createMain(
 
   const prevButton = document.createElement("button");
   prevButton.innerText = "Anterior";
-  prevButton.className = "details-button";
+  prevButton.className = "primary-button details-button";
   const nextButton = document.createElement("button");
   nextButton.innerText = "Siguiente";
-  nextButton.className = "details-button";
+  nextButton.className = "primary-button details-button";
 
   function updatePagination(previous, next) {
     prevButton.onclick = () => fetchGames(previous);

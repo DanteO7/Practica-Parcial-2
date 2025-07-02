@@ -1,4 +1,4 @@
-import "./../css/index.css";
+import "./../css/app.css";
 import { createFavorite } from "./create-favorite";
 import { createIndex } from "./create-index";
 

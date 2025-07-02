@@ -1,55 +1,107 @@
-.details-button {
-  color: red;
-  border: 1.3px solid red;
+.primary-button {
+  width: auto;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
   border-radius: 1.6rem;
-  padding: 0.5rem 1rem;
+  padding: 10px;
+  appearance: auto;
+  max-width: max-content;
+  color: var(--primary-color);
+  cursor: pointer;
+
+  transition: all 0.3s ease;
 }
 
-.favorite-button {
+.primary-button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.button-image {
   width: 2.5rem;
   height: 2.5rem;
-  border: 1.5px solid red;
+  border: 1.5px solid var(--primary-color);
   border-radius: 50%;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
-.favorite-button img {
+.button-image:hover {
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+.button-image.active:hover {
+  background-color: var(--secondary-color);
+}
+
+.button-image.active div {
+  background-image: url("assets/corazon-relleno.png");
+}
+
+.button-image.active:hover div {
+  background-image: url("assets/favoritos.png");
+}
+
+.favorite-button div {
+  background-image: url("assets/favoritos.png");
   width: 60%;
+  height: 60%;
+  background-size: cover;
 }
 
-.favorite-button.active {
-  background-color: red;
+.favorite-button:hover div {
+  background-image: url("assets/corazon-negro.png");
 }
 
-.close-button {
-  border: 1px solid red;
-  border-radius: 6px;
-  background-color: #1e1e1e;
-  padding: 5px;
+.prev-button div {
+  background-image: url("assets/prev.png");
+  width: 60%;
+  height: 60%;
+  background-size: cover;
 }
 
-.ordering-field {
-  width: auto;
-  background-color: #1e1e1e;
-  border: 1px solid red;
-  border-radius: 16px;
-  padding: 5px 10px;
-  appearance: auto;
-  max-width: max-content;
+.prev-button:hover div {
+  background-image: url("assets/prev-negro.png");
 }
 
-.ordering-button {
-  width: auto;
-  background-color: #1e1e1e;
-  border: 1px solid red;
-  border-radius: 16px;
-  padding: 5px 10px;
-  appearance: auto;
-  max-width: max-content;
+.next-button div {
+  background-image: url("assets/next.png");
+  width: 60%;
+  height: 60%;
+  background-size: cover;
+}
+
+.next-button:hover div {
+  background-image: url("assets/next-negro.png");
+}
+
+.close-button div {
+  background-image: url("assets/close.png");
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+}
+
+.close-button:hover div {
+  background-image: url("assets/close-negro.png");
 }
 
 .modal-button {
+  width: auto;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 1.6rem;
+  padding: 10px;
+  appearance: auto;
+  max-width: max-content;
+  color: var(--primary-color);
+  cursor: pointer;
+
+  transition: all 0.3s ease;
 }
