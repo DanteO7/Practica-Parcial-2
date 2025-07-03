@@ -19,6 +19,10 @@ main {
   font-size: 2.3rem;
 }
 
+.filters-container h3 {
+  font-size: 1.4rem;
+}
+
 .title-container {
   margin: 1rem 0 2rem 0;
   text-align: center;

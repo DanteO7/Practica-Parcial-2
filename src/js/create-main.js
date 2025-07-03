@@ -5,7 +5,7 @@ const currentUrl =
   "https://api.rawg.io/api/games?key=d9dc2c3b718b44eca778d7aab8b1fbd9";
 
 // crea el main del index recibiendo el contenedor y una url, se inicializa con la que queres que aparezca al inicio
-export function createMain(main, url = currentUrl) {
+export function createMain(main, url = currentUrl, filter = "", ordering = "") {
   main.innerHTML = "";
   // crea la sección de los filtros y agrega el html
   const filtersContainer = document.createElement("section");
@@ -43,17 +43,24 @@ export function createMain(main, url = currentUrl) {
       <option class="primary-button ordering-field" value="added">Agregado</option>
     </select>
     <button class="primary-button filters-button">Aplicar</button>
+    ${filter === "" ? "" : `<h3>Género: ${filter}</h3>`}
+    ${ordering === "" ? "" : `<h3>Orden: ${ordering}</h3>`}
   `;
   // el boton crea el main nuevamente con los filtros en la url
   const orderingSelected = filtersContainer.querySelector(".ordering-field");
   const filterSelected = filtersContainer.querySelector(".filter-field");
   const filterButton = filtersContainer.querySelector(".filters-button");
+  // orderingSelected.innerText = "Agregado ";
   filterButton.addEventListener("click", () => {
+    console.log(filterSelected.value);
+
     createMain(
       main,
       `${currentUrl}&ordering=-${orderingSelected.value}${
         filterSelected.value ? `&genres=${filterSelected.value}` : ""
-      }`
+      }`,
+      filterSelected.value,
+      orderingSelected.value
     );
   });
 
@@ -66,8 +73,8 @@ export function createMain(main, url = currentUrl) {
     try {
       const res = await fetch(url);
       const data = await res.json();
-
       // si no trae resultados devuelve un texto y un error
+
       if (data.results.length === 0) {
         cardsContainer.removeChild(cardsContainer.firstElementChild);
         const error = document.createElement("h3");
@@ -78,6 +85,7 @@ export function createMain(main, url = currentUrl) {
 
       // si hay resultados crea las cards, actualiza los botones de paginación y vuelve la ventana hacia arriba
       createCard(data.results, cardsContainer);
+      main.appendChild(buttonContainer);
       updatePagination(data.previous, data.next);
 
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -85,7 +93,6 @@ export function createMain(main, url = currentUrl) {
       console.error(err);
     }
   }
-
   // crea el contenedor y los botones
   const buttonContainer = document.createElement("section");
   buttonContainer.classList.add("pagination-container");
@@ -110,5 +117,4 @@ export function createMain(main, url = currentUrl) {
   fetchGames(url);
   main.appendChild(filtersContainer);
   main.appendChild(cardsContainer);
-  main.appendChild(buttonContainer);
 }
