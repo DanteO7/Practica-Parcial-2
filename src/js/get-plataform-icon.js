@@ -1,31 +1,49 @@
+// devuelve el html de una imagen dependiendo de la plataforma que recibe
+
+const PLATFOTMS = Object.freeze({
+  PC: "PC",
+  PLAYSTATION: "PlayStation",
+  XBOX: "Xbox",
+  IOS: "iOS",
+  ANDROID: "Android",
+  MAC: "Apple Macintosh",
+  LINUX: "Linux",
+  NINTENDO: "Nintendo",
+  WEB: "Web",
+  SEGA: "SEGA",
+  COMMODORE: "Commodore / Amiga",
+  NEOGEO: "Neo Geo",
+  ATARI: "Atari",
+});
+
 export function getPlatformIcon(platformName) {
   switch (platformName) {
-    case "PC":
-      return `<img src="/assets/microsoft.png" title="PC" alt="PC">`;
-    case "PlayStation":
-      return `<img src="/assets/playstation.png" title="PlayStation" alt="PlayStation">`;
-    case "Xbox":
-      return `<img src="/assets/xbox.png" title="Xbox" alt="Xbox">`;
-    case "iOS":
-      return `<img src="/assets/apple.png" title="Apple" alt="Apple">`;
-    case "Android":
-      return `<img src="/assets/android.png" title="Android" alt="Android">`;
-    case "Apple Macintosh":
-      return `<img src="/assets/mac.png" title="Mac" alt="Mac">`;
-    case "Linux":
-      return `<img src="/assets/linux.png" title="Linux" alt="Linux">`;
-    case "Nintendo":
-      return `<img src="/assets/nintendo.png" title="Nintendo" alt="Nintendo">`;
-    case "Web":
-      return `<img src="/assets/web.png" title="Nintendo" alt="Nintendo">`;
-    case "SEGA":
-      return `<img src="/assets/sega.png" title="SEGA" alt="SEGA">`;
-    case "Commodore / Amiga":
-      return `<img src="/assets/commodore.png" title="Commodore / Amiga" alt="Commodore / Amiga">`;
-    case "Neo Geo":
-      return `<img src="/assets/neogeo.png" title="Neo Geo" alt="Neo Geo">`;
-    case "Atari":
-      return `<img src="/assets/atari.png" title="Atari" alt="Atari">`;
+    case PLATFOTMS.PC:
+      return `<img src="/assets/microsoft.png" title="PC" alt=${PLATFOTMS.PC}>`;
+    case PLATFOTMS.PLAYSTATION:
+      return `<img src="/assets/playstation.png" title="PlayStation" alt=${PLATFOTMS.PLAYSTATION}>`;
+    case PLATFOTMS.XBOX:
+      return `<img src="/assets/xbox.png" title="Xbox" alt=${PLATFOTMS.XBOX}>`;
+    case PLATFOTMS.IOS:
+      return `<img src="/assets/apple.png" title="Apple" alt=${PLATFOTMS.IOS}>`;
+    case PLATFOTMS.ANDROID:
+      return `<img src="/assets/android.png" title="Android" alt=${PLATFOTMS.ANDROID}>`;
+    case PLATFOTMS.MAC:
+      return `<img src="/assets/mac.png" title="Mac" alt=${PLATFOTMS.MAC}>`;
+    case PLATFOTMS.LINUX:
+      return `<img src="/assets/linux.png" title="Linux" alt=${PLATFOTMS.LINUX}">`;
+    case PLATFOTMS.NINTENDO:
+      return `<img src="/assets/nintendo.png" title="Nintendo" alt=${PLATFOTMS.NINTENDO}>`;
+    case PLATFOTMS.WEB:
+      return `<img src="/assets/web.png" title="Web" alt=${PLATFOTMS.WEB}>`;
+    case PLATFOTMS.SEGA:
+      return `<img src="/assets/sega.png" title="SEGA" alt=${PLATFOTMS.SEGA}>`;
+    case PLATFOTMS.COMMODORE:
+      return `<img src="/assets/commodore.png" title="Commodore / Amiga" alt=${PLATFOTMS.COMMODORE}>`;
+    case PLATFOTMS.NEOGEO:
+      return `<img src="/assets/neogeo.png" title="Neo Geo" alt=${PLATFOTMS.NEOGEO}>`;
+    case PLATFOTMS.ATARI:
+      return `<img src="/assets/atari.png" title="Atari" alt=${PLATFOTMS.ATARI}>`;
     default:
       return `<span>${platformName}</span>`;
   }

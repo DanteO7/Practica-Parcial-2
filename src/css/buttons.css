@@ -12,12 +12,6 @@
   transition: all 0.3s ease;
 }
 
-.primary-button:hover {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
-}
-
 .button-image {
   width: 2.5rem;
   height: 2.5rem;
@@ -31,6 +25,7 @@
   transition: all 0.3s ease;
 }
 
+/* cambio la imagen de fondo cuando cambia de clase */
 .button-image.active div {
   background-image: url("/assets/corazon-relleno.png");
 }
@@ -63,21 +58,14 @@
   background-size: cover;
 }
 
-.modal-button {
-  width: auto;
-  background-color: var(--secondary-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 1.6rem;
-  padding: 10px;
-  appearance: auto;
-  max-width: max-content;
-  color: var(--primary-color);
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
+/* pongo los hover para que solo funcionen en una pc porque en celulares no funciona correctamente */
 @media (hover: hover) and (pointer: fine) {
+  .primary-button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+  }
+
   .button-image:hover {
     border: 1px solid var(--primary-color);
     background-color: var(--primary-color);

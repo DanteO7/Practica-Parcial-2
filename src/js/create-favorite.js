@@ -1,7 +1,9 @@
 import { createHeader } from "./create-header";
 import { createFooter } from "./create-footer";
 import { createMainFavorite } from "./create-main-favorite";
-import { updateMain } from "./update-main";
+import { initSearchInput } from "./init-search-input";
+
+// crea los contenedores principales y los agrega a la #app
 
 export function createFavorite() {
   const app = document.querySelector("#app");
@@ -10,8 +12,9 @@ export function createFavorite() {
   createHeader(header);
 
   const main = document.createElement("main");
+  // usa otro js para crear el main de favoritos
   createMainFavorite(main);
-  updateMain(header, main);
+  initSearchInput(header, main);
 
   const footer = document.createElement("footer");
   createFooter(footer);

@@ -1,7 +1,9 @@
 import { createHeader } from "./create-header";
 import { createMain } from "./create-main";
 import { createFooter } from "./create-footer";
-import { updateMain } from "./update-main";
+import { initSearchInput } from "./init-search-input";
+
+// crea los contenedores principales y los agrega a #app
 
 export function createIndex() {
   const app = document.querySelector("#app");
@@ -11,7 +13,7 @@ export function createIndex() {
 
   const main = document.createElement("main");
   createMain(main);
-  updateMain(header, main);
+  initSearchInput(header, main);
 
   const footer = document.createElement("footer");
   createFooter(footer);

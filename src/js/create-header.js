@@ -1,3 +1,5 @@
+// recibe el contenedor del header y crea el html
+
 export function createHeader(header) {
   header.innerHTML = `
     <div class="logo-container">
@@ -7,7 +9,7 @@ export function createHeader(header) {
           <input type="search" id="search-input" />
         </div>
         <div class="favorites-container">
-          <a href="/favorites.html"><img src="/assets/favoritos.png" alt="Imagen de favoritos" /></a>
+          <a href="./../../favorites/index.html"><img src="/assets/favoritos.png" alt="Imagen de favoritos" /></a>
         </div>
   `;
 }
