@@ -46,11 +46,10 @@ export function createMain(main, url = currentUrl, filter = "", ordering = "") {
     ${filter === "" ? "" : `<h3>Género: ${filter}</h3>`}
     ${ordering === "" ? "" : `<h3>Orden: ${ordering}</h3>`}
   `;
-  // el boton crea el main nuevamente con los filtros en la url
+  // el boton crea el main nuevamente con los filtros en la url y la data del filtrado
   const orderingSelected = filtersContainer.querySelector(".ordering-field");
   const filterSelected = filtersContainer.querySelector(".filter-field");
   const filterButton = filtersContainer.querySelector(".filters-button");
-  // orderingSelected.innerText = "Agregado ";
   filterButton.addEventListener("click", () => {
     console.log(filterSelected.value);
 
@@ -73,8 +72,8 @@ export function createMain(main, url = currentUrl, filter = "", ordering = "") {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      // si no trae resultados devuelve un texto y un error
 
+      // si no trae resultados devuelve un texto y un error
       if (data.results.length === 0) {
         cardsContainer.removeChild(cardsContainer.firstElementChild);
         const error = document.createElement("h3");

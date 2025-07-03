@@ -28,6 +28,10 @@ export function createCard(games, cardContainer) {
       </div>
     `;
 
+    card.addEventListener("click", () =>
+      createModal(cardContainer, game, card)
+    );
+
     // el boton favorito hace un toggle a la clase active, si la tiene setea el juego en el local storage, si no lo remueve
     const favoriteButton = card.querySelector(".favorite-button");
     favoriteButton.addEventListener("click", () => {
