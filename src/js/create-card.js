@@ -20,14 +20,14 @@ export function createCard(games, cardContainer) {
         </div>
 
         <div class="card-buttons">
-          <button class="primary-button details-button">Más Detalles</button>
+          <button class="primary-button">Más Detalles</button>
           <button class="button-image favorite-button">
             <div></div>
           </button>
         </div>
       </div>
     `;
-
+    // crea el modal al tocar la card
     card.addEventListener("click", () =>
       createModal(cardContainer, game, card)
     );
@@ -35,6 +35,7 @@ export function createCard(games, cardContainer) {
     // el boton favorito hace un toggle a la clase active, si la tiene setea el juego en el local storage, si no lo remueve
     const favoriteButton = card.querySelector(".favorite-button");
     favoriteButton.addEventListener("click", () => {
+      event.stopPropagation();
       favoriteButton.classList.toggle("active");
       favoriteButton.classList.contains("active")
         ? localStorage.setItem(game.id, JSON.stringify(game))
@@ -47,12 +48,6 @@ export function createCard(games, cardContainer) {
         favoriteButton.classList.add("active");
       }
     }
-
-    // el boton de detalles crea un modal para el juego
-    const detailButton = card.querySelector(".details-button");
-    detailButton.addEventListener("click", () =>
-      createModal(cardContainer, game, card)
-    );
 
     // agrego la card al contenedor
     cardContainer.appendChild(card);
