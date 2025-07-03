@@ -31,21 +31,8 @@
   transition: all 0.3s ease;
 }
 
-.button-image:hover {
-  border: 1px solid var(--primary-color);
-  background-color: var(--primary-color);
-}
-
-.button-image.active:hover {
-  background-color: var(--secondary-color);
-}
-
 .button-image.active div {
   background-image: url("/assets/corazon-relleno.png");
-}
-
-.button-image.active:hover div {
-  background-image: url("/assets/favoritos.png");
 }
 
 .favorite-button div {
@@ -55,19 +42,11 @@
   background-size: cover;
 }
 
-.favorite-button:hover div {
-  background-image: url("/assets/corazon-negro.png");
-}
-
 .prev-button div {
   background-image: url("/assets/prev.png");
   width: 60%;
   height: 60%;
   background-size: cover;
-}
-
-.prev-button:hover div {
-  background-image: url("/assets/prev-negro.png");
 }
 
 .next-button div {
@@ -77,19 +56,11 @@
   background-size: cover;
 }
 
-.next-button:hover div {
-  background-image: url("/assets/next-negro.png");
-}
-
 .close-button div {
   background-image: url("/assets/close.png");
   width: 50%;
   height: 50%;
   background-size: cover;
-}
-
-.close-button:hover div {
-  background-image: url("/assets/close-negro.png");
 }
 
 .modal-button {
@@ -104,4 +75,31 @@
   cursor: pointer;
 
   transition: all 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-image:hover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+  }
+
+  .button-image.active:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .favorite-button:hover div {
+    background-image: url("/assets/corazon-negro.png");
+  }
+  .button-image.active:hover div {
+    background-image: url("/assets/favoritos.png");
+  }
+  .prev-button:hover div {
+    background-image: url("/assets/prev-negro.png");
+  }
+  .next-button:hover div {
+    background-image: url("/assets/next-negro.png");
+  }
+  .close-button:hover div {
+    background-image: url("/assets/close-negro.png");
+  }
 }

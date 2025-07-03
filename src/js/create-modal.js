@@ -1,6 +1,6 @@
 import { getPlatformIcon } from "./get-plataform-icon";
 
-export function createModal(card, game) {
+export function createModal(cardContainer, game) {
   document.body.style.overflow = "hidden";
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal-container");
@@ -75,9 +75,9 @@ export function createModal(card, game) {
   }
   const closeModalButton = modalContainer.querySelector(".close-button");
   closeModalButton.addEventListener("click", () => {
-    card.removeChild(card.lastElementChild);
+    cardContainer.removeChild(cardContainer.lastElementChild);
     document.body.style.overflow = "";
-    const cardFavoriteButton = card.querySelector(".favorite-button");
+    const cardFavoriteButton = cardContainer.querySelector(".favorite-button");
     cardFavoriteButton.className = favoriteButton.className;
   });
 
@@ -115,5 +115,5 @@ export function createModal(card, game) {
     newLast.classList.add("last");
   }
 
-  card.appendChild(modalContainer);
+  cardContainer.appendChild(modalContainer);
 }

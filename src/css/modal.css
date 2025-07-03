@@ -1,4 +1,5 @@
 .modal-container {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -20,6 +21,7 @@
   border: 1px solid red;
   border-radius: 10px;
   overflow-y: auto;
+  scrollbar-width: none;
 
   display: flex;
   flex-direction: column;
@@ -105,6 +107,7 @@
 .favorite-container {
   display: flex;
   justify-content: end;
+  margin-bottom: 10px;
 }
 
 @media (width > 768px) {

@@ -41,7 +41,9 @@ export function createCard(games, cardContainer) {
     }
 
     const detailButton = card.querySelector(".details-button");
-    detailButton.addEventListener("click", () => createModal(card, game));
+    detailButton.addEventListener("click", () =>
+      createModal(cardContainer, game)
+    );
 
     cardContainer.appendChild(card);
   });

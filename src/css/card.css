@@ -3,6 +3,13 @@
   width: 325px;
   border: 1px solid var(--border-color);
   border-radius: 1rem;
+  box-shadow: 1px 1px 8px 1px var(--secondary-color);
+  transition: all 0.4s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 12px 3px var(--secondary-color);
 }
 
 .card-image {
